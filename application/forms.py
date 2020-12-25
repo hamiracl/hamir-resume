@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField, TextAreaField
-from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationError
+from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationError, NumberRange
 
 class ContactForm(FlaskForm):
     email   = StringField("Email", validators=[DataRequired(), Email()])
