@@ -5,6 +5,6 @@ from wtforms.validators import DataRequired, Email, Length, EqualTo, ValidationE
 class ContactForm(FlaskForm):
     email   = StringField("Email", validators=[DataRequired(), Email()])
     name = StringField("Name", validators=[DataRequired(),Length(min=2,max=55)])
-    phone = IntegerField("Phone Number", validators = [Length(max = 20)])
+    phone = IntegerField("Phone Number", validators = [NumberRange(min=0, max=15)])
     message = TextAreaField("Message", validators=[Length(max = 1000)])
     submit = SubmitField("Send")
